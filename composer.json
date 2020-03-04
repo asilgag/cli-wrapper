@@ -1,0 +1,23 @@
+{
+  "name": "asilgag/cli-wrapper",
+  "type": "library",
+  "description": "A simple wrapper over CLI commands",
+  "keywords": ["CLI", "shell", "bash"],
+  "homepage": "https://github.com/asilgag/cli-wrapper",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alberto Silva",
+      "email": "asilgag@gmail.com",
+      "homepage": "https://github.com/asilgag"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Asilgag\\CliWrapper\\": "src/"
+    }
+  }
+}
