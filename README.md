@@ -25,7 +25,7 @@ A simple PHP wrapper over CLI commands.
     $command = new CliCommand('rsync', ['-avzh', '/source/path', '/target/path/']);
     
     // Execute commmand. Will throw a RuntimeException
-    // if command exist with a non-zero code.
+    // if command exits with a non-zero code.
     try {
         $cli->exec($command);
     }
