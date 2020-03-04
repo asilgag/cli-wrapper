@@ -1,6 +1,6 @@
 # cli-wrapper
 
-A simple wrapper over CLI commands.
+A simple PHP wrapper over CLI commands.
 
 ## Installation
     composer require asilgag/cli-wrapper

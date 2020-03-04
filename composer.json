@@ -1,7 +1,7 @@
 {
   "name": "asilgag/cli-wrapper",
   "type": "library",
-  "description": "A simple wrapper over CLI commands",
+  "description": "A simple PHP wrapper over CLI commands",
   "keywords": ["CLI", "shell", "bash"],
   "homepage": "https://github.com/asilgag/cli-wrapper",
   "license": "MIT",
