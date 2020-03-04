@@ -17,9 +17,9 @@ class CliCommand {
   /**
    * Array of options for the command.
    *
-   * @var array|null
+   * @var array
    */
-  protected $options;
+  protected $options = [];
 
   /**
    * AwsCliCommand constructor.
@@ -29,7 +29,7 @@ class CliCommand {
    * @param array|null $options
    *   Array of options for the command (i.e.- ['--recursive', '--include *']).
    */
-  public function __construct(string $command, array $options = NULL) {
+  public function __construct(string $command, array $options = []) {
     $this->command = $command;
     $this->options = $options;
   }
@@ -46,9 +46,9 @@ class CliCommand {
   /**
    * Get options array.
    *
-   * @return array|null
+   * @return array
    */
-  public function getOptions(): ?array {
+  public function getOptions(): array {
     return $this->options;
   }
 

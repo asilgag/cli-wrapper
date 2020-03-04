@@ -89,7 +89,9 @@ class CliWrapper {
    */
   public function stringify(CliCommand $command): string {
     $commandParts[] = $command->getCommand();
-    $commandParts[] = implode(' ', $command->getOptions());
+    if (count($command->getOptions()) > 0) {
+      $commandParts[] = implode(' ', $command->getOptions());
+    }
     return implode(' ', $commandParts);
   }
 
