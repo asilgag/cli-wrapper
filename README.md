@@ -10,22 +10,20 @@ A simple PHP wrapper over CLI commands.
     use Asilgag\CliWrapper\CliWrapper;
     use Asilgag\CliWrapper\CliCommand;
     
-    // Create a new Cli Wrapper
+    // Create a new CLI Wrapper
     $cli = new CliWrapper();
     
     // Set environment variables if needed.
     $cli->setEnvironment('FOO', 'baz');
     
     // Set global options for specific commands.
-    // In this example, all  "rsync" commands will be
-    // suffixed with "--quiet".
-    $cli->globalOptions('rsync')->add('--quiet');
+    // In this example, all "rsync" commands will be suffixed with "--quiet".
+    $cli->getGlobalOptions('rsync')->add('--quiet');
 
     // Create new command.
     $command = new CliCommand('rsync', ['-avzh', '/source/path', '/target/path/']);
     
-    // Execute command. It will throw a RuntimeException
-    // if command exits with a non-zero code.
+    // Execute command. It will throw a RuntimeException if it exits with a non-zero code.
     try {
         $cli->exec($command);
     }

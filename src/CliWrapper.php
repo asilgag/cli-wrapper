@@ -31,7 +31,7 @@ class CliWrapper {
    *
    * @return \Asilgag\CliWrapper\CliOptionsBag
    */
-  public function globalOptions(string $commandName): CliOptionsBag {
+  public function getGlobalOptions(string $commandName): CliOptionsBag {
     if (!$this->globalOptions[$commandName]) {
       $this->globalOptions[$commandName] = new CliOptionsBag();
     }
@@ -65,7 +65,7 @@ class CliWrapper {
   public function exec(CliCommand $command, array &$output = NULL, &$return_var = NULL): void {
     $commandString = $this->stringify($command);
     // Always add global options.
-    $commandGlobalOptions = implode(' ', $this->globalOptions($command->getCommand())->getBag());
+    $commandGlobalOptions = implode(' ', $this->getGlobalOptions($command->getCommand())->getBag());
     $commandString .= $commandGlobalOptions ? ' ' . $commandGlobalOptions : '';
     // Escape globs (*) to avoid them being executed when process is forked.
     $escapedCommandString = str_replace(['*', '\\*'], '\*', $commandString);
