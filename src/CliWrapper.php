@@ -32,7 +32,7 @@ class CliWrapper {
    * @return \Asilgag\CliWrapper\CliOptionsBag
    */
   public function getGlobalOptions(string $commandName): CliOptionsBag {
-    if (!$this->globalOptions[$commandName]) {
+    if (!isset($this->globalOptions[$commandName])) {
       $this->globalOptions[$commandName] = new CliOptionsBag();
     }
     return $this->globalOptions[$commandName];
