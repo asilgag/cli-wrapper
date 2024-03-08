@@ -67,9 +67,7 @@ class CliWrapper {
     // Always add global options.
     $commandGlobalOptions = implode(' ', $this->getGlobalOptions($command->getCommand())->getBag());
     $commandString .= $commandGlobalOptions ? ' ' . $commandGlobalOptions : '';
-    // Escape globs (*) to avoid them being executed when process is forked.
-    $escapedCommandString = str_replace(['*', '\\*'], '\*', $commandString);
-    exec($escapedCommandString, $output, $return_var);
+    exec($commandString, $output, $return_var);
     if ($return_var !== 0) {
       throw new RuntimeException('Error executing command ' . $commandString . ":\n" . implode("\n", $output));
     }
